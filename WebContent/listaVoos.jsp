@@ -1,11 +1,11 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+ <%@page import="br.com.rocketAirlines.modelo.Voo"%>   
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>    
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	<c:import url="Header.html"></c:import>
+	<c:import url="${pageContext.request.contextPath}/Header.html"></c:import>
 	<div class="mainContainer">
 		<div class="tableTitle">
 			<h3>Lista de Voos</h3>
@@ -46,34 +46,19 @@
 					<td>19:00</td>
 					<td>Boeing 747</td>
 					<td>sem escalas</td>
-				<c:forEach items="${avioes}" var="aviao"></c:forEach>
 				</tr>
 				
-				<% 
-					List<Integer> num = new ArrayList<Integer>();
-					 for(int i=0; i<100;i++){
-						 num.add(i);
-					 }
-					
-					 
-					  pageContext.setAttribute("num", num);
-				%>
+
 				
 				
 				<!-- 
 				
 				 -->
-				<c:forEach items="${num}" var="num" >
+				<c:forEach items="${voos}" var="num" >
 					
 				<tr>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
-					<td>${num}</td>
+					<td>${num.id}</td>
+
 					
 				
 				</tr>

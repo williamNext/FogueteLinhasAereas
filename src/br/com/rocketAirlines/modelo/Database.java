@@ -182,7 +182,7 @@ public class Database {
 		// -------------------------------------------------------
 		
 		
-	    Voo voo1 = new Voo();
+	    	Voo voo1 = new Voo();
 	        voo1.setAviao(aviao1);
 	        voo1.setId(chaveVoo++);
 	        voo1.setRota(rota1);
@@ -216,13 +216,12 @@ public class Database {
 	        voo5.setRota(rota5);
 	        voo5.setDataHoraChegada(Calendar.getInstance());
 	        voo5.setDataHoraPartida(Calendar.getInstance());
-
+	        
+	        voos.add(voo1);
 	        voos.add(voo2);
 	        voos.add(voo3);
 	        voos.add(voo4);
 	        voos.add(voo5);
-
-		
 		
 	}
 
