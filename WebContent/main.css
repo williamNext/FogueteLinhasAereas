@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+html,body{
+	margin:0;
+	height: 100%;
+	width: 100%;
+}
+header{
+	display:flex;
+	padding:0;
+	justify-content: space-between;
+	
+}
+
+.logo{
+	display:flex;
+	flex-direction: row;
+}
+
+
+
+.menu{
+	display: flex;
+	flex-direction: row;
+	align-self: flex-end;
+	margin-right: 5%;
+}
+
+.menu > a{
+	
+	padding:15px;
+}
+img {
+	margin-top:10px;
+	padding-left:20px;
+	width: 200px; /* Valor da Largura do elemento */
+}
+
+h1{
+	margin-top: 60px;
+}
+
