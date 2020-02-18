@@ -19,6 +19,7 @@ public class Database {
 	private static Integer chavePais = 1;
 
 	static {
+		
 		Aviao aviao1 = new Aviao();
 		aviao1.setId(chaveAviao++);
 		aviao1.setModelo("A319");
@@ -180,41 +181,117 @@ public class Database {
 		rotas.add(rota5);
 
 		// -------------------------------------------------------
+		Calendar c1 = Calendar.getInstance();
+		Calendar c2 = Calendar.getInstance();
 
 		Voo voo1 = new Voo();
 		voo1.setAviao(aviao1);
 		voo1.setId(chaveVoo++);
 		voo1.setRota(rota1);
-		voo1.setDataHoraChegada(Calendar.getInstance());
-		voo1.setDataHoraPartida(Calendar.getInstance());
+		
+		
+		c1.set(Calendar.YEAR, 2020);
+		c1.set(Calendar.MONTH, 9);
+		c1.set(Calendar.DAY_OF_MONTH, 11);
+		c1.set(Calendar.HOUR, 18);
+		c1.set(Calendar.MINUTE, 00);
+		voo1.setDataHoraPartida(c1);
+		
+		//c.clear();
+		
+		c2.set(Calendar.YEAR, 2020);
+		c2.set(Calendar.MONTH, 9);
+		c2.set(Calendar.DAY_OF_MONTH, 11);
+		c2.set(Calendar.HOUR, 20);
+		c2.set(Calendar.MINUTE, 30);
+		voo1.setDataHoraChegada(c2);
+		
+		Calendar c3 = Calendar.getInstance();
+		Calendar c4 = Calendar.getInstance();
+		
 
 		Voo voo2 = new Voo();
 		voo2.setAviao(aviao2);
 		voo2.setId(chaveVoo++);
 		voo2.setRota(rota2);
-		voo2.setDataHoraChegada(Calendar.getInstance());
-		voo2.setDataHoraPartida(Calendar.getInstance());
+		c3.set(Calendar.YEAR, 2020);
+		c3.set(Calendar.MONTH, 10);
+		c3.set(Calendar.DAY_OF_MONTH, 21);
+		c3.set(Calendar.HOUR, 18);
+		c3.set(Calendar.MINUTE, 00);
+		voo2.setDataHoraPartida(c3);
+		
+		//c.clear();
+		
+		c4.set(Calendar.YEAR, 2020);
+		c4.set(Calendar.MONTH, 10);
+		c4.set(Calendar.DAY_OF_MONTH, 22);
+		c4.set(Calendar.HOUR, 2);
+		c4.set(Calendar.MINUTE, 30);
+		voo2.setDataHoraChegada(c4);
 
+		Calendar c5 = Calendar.getInstance();
+		Calendar c6 = Calendar.getInstance();
+		
 		Voo voo3 = new Voo();
 		voo3.setAviao(aviao3);
 		voo3.setId(chaveVoo++);
 		voo3.setRota(rota3);
-		voo3.setDataHoraChegada(Calendar.getInstance());
-		voo3.setDataHoraPartida(Calendar.getInstance());
+		c5.set(Calendar.YEAR, 2020);
+		c5.set(Calendar.MONTH, 11);
+		c5.set(Calendar.DAY_OF_MONTH, 5);
+		c5.set(Calendar.HOUR, 23);
+		c5.set(Calendar.MINUTE, 00);
+		voo3.setDataHoraPartida(c5);
+		
+		c6.set(Calendar.YEAR, 2020);
+		c6.set(Calendar.MONTH, 10);
+		c6.set(Calendar.DAY_OF_MONTH, 6);
+		c6.set(Calendar.HOUR, 12);
+		c6.set(Calendar.MINUTE, 30);
+		voo3.setDataHoraChegada(c6);
+		
+		Calendar c7 = Calendar.getInstance();
+		Calendar c8 = Calendar.getInstance();
 
 		Voo voo4 = new Voo();
 		voo4.setAviao(aviao4);
 		voo4.setId(chaveVoo++);
 		voo4.setRota(rota4);
-		voo4.setDataHoraChegada(Calendar.getInstance());
-		voo4.setDataHoraPartida(Calendar.getInstance());
+		c7.set(Calendar.YEAR, 2020);
+		c7.set(Calendar.MONTH, 11);
+		c7.set(Calendar.DAY_OF_MONTH, 16);
+		c7.set(Calendar.HOUR, 23);
+		c7.set(Calendar.MINUTE, 00);
+		voo4.setDataHoraPartida(c7);
+		
+		c8.set(Calendar.YEAR, 2020);
+		c8.set(Calendar.MONTH, 10);
+		c8.set(Calendar.DAY_OF_MONTH, 17);
+		c8.set(Calendar.HOUR, 11);
+		c8.set(Calendar.MINUTE, 30);
+		voo4.setDataHoraChegada(c8);
+		
+		Calendar c9 = Calendar.getInstance();
+		Calendar c10 = Calendar.getInstance();
 
 		Voo voo5 = new Voo();
 		voo5.setAviao(aviao5);
 		voo5.setId(chaveVoo++);
 		voo5.setRota(rota5);
-		voo5.setDataHoraChegada(Calendar.getInstance());
-		voo5.setDataHoraPartida(Calendar.getInstance());
+		c9.set(Calendar.YEAR, 2020);
+		c9.set(Calendar.MONTH, 11);
+		c9.set(Calendar.DAY_OF_MONTH, 20);
+		c9.set(Calendar.HOUR, 23);
+		c9.set(Calendar.MINUTE, 00);
+		voo5.setDataHoraPartida(c9);
+		
+		c10.set(Calendar.YEAR, 2020);
+		c10.set(Calendar.MONTH, 10);
+		c10.set(Calendar.DAY_OF_MONTH, 21);
+		c10.set(Calendar.HOUR, 13);
+		c10.set(Calendar.MINUTE, 30);
+		voo5.setDataHoraChegada(c10);
 
 		voos.add(voo1);
 		voos.add(voo2);
