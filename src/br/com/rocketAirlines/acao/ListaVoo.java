@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import br.com.rocketAirlines.modelo.Voo;
+import br.com.rocketAirlines.util.JsonConverter;
 
 public class ListaVoo implements Acao {
 
@@ -28,10 +29,10 @@ public class ListaVoo implements Acao {
 			.returnContent()
 			.asString();
 		
-		Object lista = new Gson().fromJson(conteudo, new TypeToken<List<Voo>>(){}.getType());//JsonConverter.fromJson(conteudo, new TypeToken<List<Voo>>(){}.getType());
+		Object lista = JsonConverter.fromJson(conteudo, new TypeToken<List<Voo>>(){}.getType());
 
 		request.setAttribute("voos", lista);
 
-		return "redirect:listaVoos.jsp";
+		return "forward:listaVoos.jsp";
 	}
 }

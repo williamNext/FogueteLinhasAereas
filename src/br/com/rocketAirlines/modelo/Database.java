@@ -180,49 +180,48 @@ public class Database {
 		rotas.add(rota5);
 
 		// -------------------------------------------------------
-		
-		
-	    	Voo voo1 = new Voo();
-	        voo1.setAviao(aviao1);
-	        voo1.setId(chaveVoo++);
-	        voo1.setRota(rota1);
-	        voo1.setDataHoraChegada(Calendar.getInstance());
-	        voo1.setDataHoraPartida(Calendar.getInstance());
-	       
-	        Voo voo2 = new Voo();
-	        voo2.setAviao(aviao2);
-	        voo2.setId(chaveVoo++);
-	        voo2.setRota(rota2);
-	        voo2.setDataHoraChegada(Calendar.getInstance());
-	        voo2.setDataHoraPartida(Calendar.getInstance());
-	       
-	        Voo voo3 = new Voo();
-	        voo3.setAviao(aviao3);
-	        voo3.setId(chaveVoo++);
-	        voo3.setRota(rota3);
-	        voo3.setDataHoraChegada(Calendar.getInstance());
-	        voo3.setDataHoraPartida(Calendar.getInstance());
-	       
-	        Voo voo4 = new Voo();
-	        voo4.setAviao(aviao4);
-	        voo4.setId(chaveVoo++);
-	        voo4.setRota(rota4);
-	        voo4.setDataHoraChegada(Calendar.getInstance());
-	        voo4.setDataHoraPartida(Calendar.getInstance());
-	       
-	        Voo voo5 = new Voo();
-	        voo5.setAviao(aviao5);
-	        voo5.setId(chaveVoo++);
-	        voo5.setRota(rota5);
-	        voo5.setDataHoraChegada(Calendar.getInstance());
-	        voo5.setDataHoraPartida(Calendar.getInstance());
-	        
-	        voos.add(voo1);
-	        voos.add(voo2);
-	        voos.add(voo3);
-	        voos.add(voo4);
-	        voos.add(voo5);
-		
+
+		Voo voo1 = new Voo();
+		voo1.setAviao(aviao1);
+		voo1.setId(chaveVoo++);
+		voo1.setRota(rota1);
+		voo1.setDataHoraChegada(Calendar.getInstance());
+		voo1.setDataHoraPartida(Calendar.getInstance());
+
+		Voo voo2 = new Voo();
+		voo2.setAviao(aviao2);
+		voo2.setId(chaveVoo++);
+		voo2.setRota(rota2);
+		voo2.setDataHoraChegada(Calendar.getInstance());
+		voo2.setDataHoraPartida(Calendar.getInstance());
+
+		Voo voo3 = new Voo();
+		voo3.setAviao(aviao3);
+		voo3.setId(chaveVoo++);
+		voo3.setRota(rota3);
+		voo3.setDataHoraChegada(Calendar.getInstance());
+		voo3.setDataHoraPartida(Calendar.getInstance());
+
+		Voo voo4 = new Voo();
+		voo4.setAviao(aviao4);
+		voo4.setId(chaveVoo++);
+		voo4.setRota(rota4);
+		voo4.setDataHoraChegada(Calendar.getInstance());
+		voo4.setDataHoraPartida(Calendar.getInstance());
+
+		Voo voo5 = new Voo();
+		voo5.setAviao(aviao5);
+		voo5.setId(chaveVoo++);
+		voo5.setRota(rota5);
+		voo5.setDataHoraChegada(Calendar.getInstance());
+		voo5.setDataHoraPartida(Calendar.getInstance());
+
+		voos.add(voo1);
+		voos.add(voo2);
+		voos.add(voo3);
+		voos.add(voo4);
+		voos.add(voo5);
+
 	}
 
 	public static boolean addAviao(Aviao aviao) {

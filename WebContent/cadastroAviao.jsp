@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<c:import url="Header.html"></c:import>
+	<c:import url="Header.jsp"></c:import>
 	<div class="container">
 		
 		<label for="nome-aviao">Nome do Avião</label> 

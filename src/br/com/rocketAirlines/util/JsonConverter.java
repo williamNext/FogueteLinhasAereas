@@ -1,5 +1,7 @@
 package br.com.rocketAirlines.util;
 
+import java.lang.reflect.Type;
+
 import com.google.gson.Gson;
 
 public class JsonConverter {
@@ -12,5 +14,7 @@ public class JsonConverter {
 		return new Gson().fromJson(json, classe);
 	}
 
-	
+	public static <T> T fromJson(String json, Type type) {
+		return new Gson().fromJson(json, type);
+	}
 }
