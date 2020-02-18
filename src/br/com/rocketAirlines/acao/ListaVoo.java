@@ -32,6 +32,6 @@ public class ListaVoo implements Acao {
 
 		request.setAttribute("voos", lista);
 
-		return "redirect:listaVoos.jsp";
+		return "forward:listaVoos.jsp";
 	}
 }

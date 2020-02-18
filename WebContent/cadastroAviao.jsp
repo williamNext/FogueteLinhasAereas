@@ -17,11 +17,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
-<link href="cadastroAviao.css" rel="stylesheet" type="text/css" />
-
+<link href="css/cadastroAviao.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+		<%@ include file="/css/cadastrovoo.css" %>  
+	</style>
 </head>
 <body>
-	<c:import url="Header.html"></c:import>
+	<c:import url="Header.jsp"></c:import>
 	<div class="container">
 		
 		<label for="nome-aviao">Nome do Avião</label> 

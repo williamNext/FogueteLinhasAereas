@@ -7,12 +7,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link href="cadastrovoo.css" rel="stylesheet" type="text/css" >
+<link href="css/cadastrovoo.css" rel="stylesheet" type="text/css" >
+<style type="text/css">
+		<%@ include file="/css/cadastrovoo.css" %>  
+	</style>
 </head>
 <body>
  
 	
-	<c:import url="Header.html"></c:import>
+	<c:import url="Header.jsp"></c:import>
 	<form action="" method="post" >
 	<div class="containerVoo" style="height: fit-content%!important;">
 
@@ -99,46 +102,10 @@
 		<input type="submit" value="cadastrar" class="btn btn-primary">
 	</form>
 	
-	<!-- não quer puxar o js externo NÃO FAZER ESSA COISA HORRÍVEL PFVR -->
 	<script type="text/javascript">
 	
-	var input = document.querySelector('#cidadeOrigem');
-	var input2 = document.querySelector('#cidadeDestino');
+	 <%@ include file="/js/cadastroVoo.js" %>  
 
-	input.addEventListener('change',function enableInput(event) {
-				if (($("#cidadeOrigem").val() != "-")&& ($("#cidadeDestino").val() != "-")) {
-					$('#data').prop("disabled", false);
-					console.log("asdasd");
-					removeDisbled();
-				}
-			});
-
-	input2.addEventListener('change',function enableInput(event) {
-				if (($("#cidadeOrigem").val() != "-")&& ($("#cidadeDestino").val() != "-")) {
-					removeDisbled();
-				}
-			});
-
-
-	function removeDisbled(){
-		$('#data').prop("disabled", false),
-		$('#horaSaida').prop("disabled", false),
-		$('#horaChegada').prop("disabled", false),
-		$('#aviao').prop("disabled", false),
-		$('#escala1').prop("disabled", false),
-		$('#escala2').prop("disabled", false),
-		$('#escala3').prop("disabled", false);
-		
-	}
-	
-	$(document).ready(function() {
-		  $(window).keydown(function(event){
-		    if(event.keyCode == 13) {
-		      event.preventDefault();
-		      return false;
-		    }
-		  });
-		});
 	</script>
 	
 </body>

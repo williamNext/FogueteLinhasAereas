@@ -21,17 +21,17 @@ public class MainController extends HttpServlet {
 		String className = "br.com.rocketAirlines.acao." + getAcao(request.getRequestURI());
 		String nome = null;
 
-		System.out.println("Ainda não");
+//		System.out.println("Ainda não");
 		
 		try {
 			Class classe = Class.forName(className);// carrega a classe com o nome
 			Acao acao = (Acao) classe.newInstance();
 			nome = acao.executa(request, response);
 		} catch (Exception e) {
-			System.out.println("Deu Ruim" + e.getMessage());
+			System.out.println("Deu Ruim");
 		}
 		
-		System.out.println("Passei");
+//		System.out.println("Passei");
 		
 		if (nome != null) {
 			String[] tipoEndereco = nome.split(":");
