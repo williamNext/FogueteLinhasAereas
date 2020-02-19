@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import"%>
+<%@page import="br.com.rocketAirlines.modelo.Cidade"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -9,13 +12,14 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="css/cadastrovoo.css" rel="stylesheet" type="text/css" >
-<style type="text/css">
+    <style type="text/css">
 		<%@ include file="/css/cadastrovoo.css" %>  
 	</style>
 </head>
 <body>
  
-	
+ 	
+ 	<input type="hidden" id="placeholderCidades" value="${ arrayCidades }">
 	<c:import url="Header.jsp"></c:import>
 	<form action="CadastraVoo" method="post" >
 	<div class="containerVoo" style="height: fit-content%!important;">
@@ -31,7 +35,6 @@
 				
 			</select> 
 			
-			
 			<label for="cidadeDestino">Cidade Destino</label> 
 			 <select class="selector" id="cidadeDestino" name="cidadeDestino">
 				<option value="-">-</option>
@@ -41,13 +44,11 @@
 				</c:forEach>
 				
 			</select> 
-			
-			
-			
+				
 			<label for="aviao">Avião</label> 
 			<select class="selector" id="aviao"  name="aviao" disabled>
 				<option value="-">-</option>
-				<c:forEach items="${ avioes }" var="aviao">
+				<c:forEach items="${avioes}" var="aviao">
 					<option value="${aviao.toString()}"><c:out value="${aviao.toString()}"></c:out> </option>
 				</c:forEach>
 			</select>
@@ -63,8 +64,6 @@
 			
 			<label for="horaChegada">Hora Prevista de Chegada</label> 
 			<input type="time" value="horaChegada" id="horaChegada" name="horaChegada" disabled>
-
-			
 			
 		</div>
 
@@ -86,8 +85,7 @@
 				
 				<c:forEach items="${ cidades }" var="cidade">
 					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
-				</c:forEach>
-				
+				</c:forEach>	
 			</select>
 			 
 			<label for="nome-aviao">Escala 3</label> 
@@ -112,6 +110,11 @@
 	 <%@ include file="/js/cadastroVoo.js" %>  
 
 	</script>
+		<%
+ 		String CitiesConcat ="";
+ 		List<Cidade> cities =(List<Cidade>)pageContext.getAttribute("cidades");
+ 		pageContext.setAttribute("arrayCidades", cities);
+ 	%>
 	
 </body>
 </html>

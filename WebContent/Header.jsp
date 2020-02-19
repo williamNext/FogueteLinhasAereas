@@ -21,7 +21,6 @@
 <body>
 	<header class="jumbotron" style="padding: 0">
 		<div class="logo">
-			<img alt="rocket" src="rocket.png">
 			<h1>Rocket Airlines</h1>
 		</div>
 

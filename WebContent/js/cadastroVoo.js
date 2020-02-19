@@ -36,3 +36,9 @@
 		    }
 		  });
 		});
+	
+	
+var loop  =$("#placeholderCidades").value;
+for (var i = 0; i < loop.length; i++) {
+	console.log(loop);
+}
