@@ -1,17 +1,15 @@
 package br.com.rocketAirlines.acao;
 
 import java.io.IOException;
-import java.util.Calendar;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.rocketAirlines.acao.Acao;
 import br.com.rocketAirlines.modelo.Cidade;
-import br.com.rocketAirlines.modelo.Pais;
-import br.com.rocketAirlines.modelo.Rota;
-import br.com.rocketAirlines.modelo.Voo;
+import br.com.rocketAirlines.modelo.Database;
 
 public class CadastraVoo implements Acao {
 
@@ -60,10 +58,13 @@ public class CadastraVoo implements Acao {
 //		} else {
 //			escalas = null;
 //		}
-
+		Database database = new Database();
 		
+		List<Cidade> cidades = database.getCidades();
 		
-		return "forward:cadastroAviao.jsp";
+		request.setAttribute("cidades", cidades);
+		
+		return "forward:cadastroVoo.jsp";
 	}
 
 }

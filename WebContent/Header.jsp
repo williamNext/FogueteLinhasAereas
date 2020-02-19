@@ -30,7 +30,7 @@
 				
 		    <a href="cadastroAviao.jsp">CADASTRAR AVIÃO</a>
 				
-				<a href="cadastroVoo.jsp">CADASTRAR VOO</a>
+				<a href="CadastraVoo">CADASTRAR VOO</a>
 				<a href="ListaVoo" >LISTAR VOOS</a>
 				
 			</div>

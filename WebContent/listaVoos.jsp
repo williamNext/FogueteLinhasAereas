@@ -62,9 +62,6 @@
 					
 				<tr>
 					<td>${num.id}</td>
-
-					
-				
 				</tr>
 					
 				</c:forEach>

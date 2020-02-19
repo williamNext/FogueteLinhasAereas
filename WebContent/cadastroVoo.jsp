@@ -24,8 +24,8 @@
 			<select class="selector" id="cidadeOrigem" name="cidadeOrigem">
 				<option value="-">-</option>
 				
-				<c:forEach begin="1" end="5" var="item">
-					<option value="${item}"><c:out value="${item}"></c:out> </option>
+				<c:forEach items="${ cidades }" var="cidade">
+					<option value="${cidade.toString}"><c:out value="${cidade.toString}"></c:out> </option>
 				</c:forEach>
 				
 			</select> 

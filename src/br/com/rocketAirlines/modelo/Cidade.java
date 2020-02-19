@@ -36,6 +36,9 @@ public class Cidade {
 		this.pais = pais;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.nome+", "+this.pais.getNome();
+	}
 	
 }
