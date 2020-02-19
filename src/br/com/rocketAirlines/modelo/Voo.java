@@ -80,4 +80,9 @@ public class Voo {
 		
 		return "Sem escalas";
 	}
+	
+	@Override
+	public String toString() {
+		return this.aviao.getNome()+this.dataHoraChegada.get(Calendar.DATE)+rota.getDestino();
+	}
 }

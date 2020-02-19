@@ -12,6 +12,9 @@
 
 <link href="cadastroAviao.css" rel="stylesheet" type="text/css" />
 
+	<style type="text/css">
+		<%@ include file="/css/cadastroAviao.css" %>  
+	</style>
 </head>
 <body>
 	<c:import url="Header.jsp"></c:import>

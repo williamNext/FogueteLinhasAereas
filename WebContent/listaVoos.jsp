@@ -9,7 +9,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Lista de Voos</title>
-<link href="listavoo.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+		<%@ include file="/css/listavoo.css" %>  
+	</style>
 </head>
 <body>
 	<c:import url="Header.jsp"></c:import>

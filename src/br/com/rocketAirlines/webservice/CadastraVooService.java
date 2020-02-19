@@ -40,7 +40,6 @@ public class CadastraVooService extends HttpServlet {
 			return;
 		}
 
-		// response.getWriter().print("Inserido");
 		response.setStatus(500);
 	}
 }

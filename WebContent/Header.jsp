@@ -14,6 +14,9 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"
 	type="text/javascript"></script>
+	<style type="text/css">
+		<%@ include file="/css/main.css" %>  
+	</style>
 </head>
 <body>
 	<header class="jumbotron" style="padding: 0">

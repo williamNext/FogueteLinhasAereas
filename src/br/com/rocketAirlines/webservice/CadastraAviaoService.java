@@ -18,7 +18,7 @@ public class CadastraAviaoService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private final AviaoDAO aviaoDAO = AviaoDAO.getInstance();
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -40,7 +40,6 @@ public class CadastraAviaoService extends HttpServlet {
 			return;
 		}
 
-		// response.getWriter().print("Inserido");
 		response.setStatus(500);
 	}
 }
