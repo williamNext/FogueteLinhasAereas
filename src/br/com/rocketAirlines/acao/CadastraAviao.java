@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.rocketAirlines.modelo.Aviao;
 import br.com.rocketAirlines.modelo.TipoAviao;
+import br.com.rocketAirlines.util.JsonConverter;
+import br.com.rocketAirlines.util.WebHelper;
 
 public class CadastraAviao implements Acao {
 
@@ -17,14 +19,20 @@ public class CadastraAviao implements Acao {
 			throws ServletException, IOException {
 
 		Aviao aviao = new Aviao();
-//		AviaoDAO aviaoDAO = new AviaoDAO();
+		aviao.setNome(request.getParameter("nome"));
+		aviao.setModelo(request.getParameter("modelo"));
+		String tipo = request.getParameter("tipo");
+		
+		if(tipo.equals("domestico")) {
+			aviao.setTipo(TipoAviao.Domestico);
+		}
+		else if(tipo.equals("internacional")) {
+			aviao.setTipo(TipoAviao.Internacional);
+		}
 
-		String nomeAviao = request.getParameter("nome");
-		String modeloAviao = request.getParameter("modelo");
-		TipoAviao tipoVoo = (TipoAviao) request.getAttribute("tipoVoo");
-
-//		aviaoDAO.add(aviao);
-
-		return "redirect:entrada?acao=ListaEmpresas";
+		String json = JsonConverter.toJson(aviao);
+		WebHelper.PostJson("http://localhost:8080/taqui/cadastraAviao", json);
+		
+		return "redirect:FormCadastroAviao";
 	}
 }

@@ -1,5 +1,6 @@
 package br.com.rocketAirlines.webservice;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -21,15 +22,25 @@ public class CadastraVooService extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String json = request.getReader().readLine();
-
-		Voo voo = JsonConverter.fromJson(json, Voo.class);
-		vooDAO.add(voo);
-
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		// response.getWriter().print("Inserido");
-		response.setStatus(200);
-	}
+		
+		BufferedReader reader = request.getReader();
+		String readLine = null;
+		StringBuffer json = new StringBuffer(); 
+		
+		while((readLine = reader.readLine()) != null) {
+			json.append(readLine);
+		}
+		
+		Voo voo = JsonConverter.fromJson(json.toString(), Voo.class);
+		
+		if(vooDAO.add(voo)) {
+			response.setStatus(200);
+			return;
+		}
 
+		// response.getWriter().print("Inserido");
+		response.setStatus(500);
+	}
 }

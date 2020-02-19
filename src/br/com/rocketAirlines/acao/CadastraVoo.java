@@ -1,21 +1,13 @@
 package br.com.rocketAirlines.acao;
 
 import java.io.IOException;
-import java.util.Calendar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.rocketAirlines.acao.Acao;
-import br.com.rocketAirlines.modelo.Cidade;
-import br.com.rocketAirlines.modelo.Pais;
-import br.com.rocketAirlines.modelo.Rota;
-import br.com.rocketAirlines.modelo.Voo;
-
 public class CadastraVoo implements Acao {
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -61,8 +53,6 @@ public class CadastraVoo implements Acao {
 //			escalas = null;
 //		}
 
-		
-		
 		return "forward:cadastroAviao.jsp";
 	}
 
