@@ -3,11 +3,11 @@ package br.com.rocketAirlines.acao;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.rocketAirlines.modelo.Aviao;
 import br.com.rocketAirlines.modelo.Cidade;
 import br.com.rocketAirlines.modelo.Database;
 
@@ -61,8 +61,10 @@ public class CadastraVoo implements Acao {
 		Database database = new Database();
 		
 		List<Cidade> cidades = database.getCidades();
+		List<Aviao> avioes = database.getAvioes();
 		
 		request.setAttribute("cidades", cidades);
+		request.setAttribute("avioes", avioes);
 		
 		return "forward:cadastroVoo.jsp";
 	}

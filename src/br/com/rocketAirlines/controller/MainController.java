@@ -28,7 +28,7 @@ public class MainController extends HttpServlet {
 			Acao acao = (Acao) classe.newInstance();
 			nome = acao.executa(request, response);
 		} catch (Exception e) {
-			System.out.println("Deu Ruim");
+			System.out.println("Deu Ruim"+e.getMessage());
 		}
 		
 //		System.out.println("Passei");

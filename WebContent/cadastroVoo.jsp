@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
  
 	
 	<c:import url="Header.jsp"></c:import>
-	<form action="" method="post" >
+	<form action="SalvaVoo" method="post" >
 	<div class="containerVoo" style="height: fit-content%!important;">
 
 		<div class="voo">
@@ -25,7 +26,7 @@
 				<option value="-">-</option>
 				
 				<c:forEach items="${ cidades }" var="cidade">
-					<option value="${cidade.toString}"><c:out value="${cidade.toString}"></c:out> </option>
+					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
 				</c:forEach>
 				
 			</select> 
@@ -35,8 +36,8 @@
 			 <select class="selector" id="cidadeDestino" name="cidadeDestino">
 				<option value="-">-</option>
 				
-				<c:forEach begin="1" end="5" var="item">
-					<option value="${item}"><c:out value="${item}"></c:out> </option>
+				<c:forEach items="${ cidades }" var="cidade">
+					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
 				</c:forEach>
 				
 			</select> 
@@ -44,10 +45,11 @@
 			
 			
 			<label for="aviao">Avião</label> 
-			<select class="selector" id="aviao"  name="avião" disabled>
+			<select class="selector" id="aviao"  name="aviao" disabled>
 				<option value="-">-</option>
-				<option value="domestico">Doméstico</option>
-				<option value="internacional">Internacional</option>
+				<c:forEach items="${ avioes }" var="aviao">
+					<option value="${aviao.toString()}"><c:out value="${aviao.toString()}"></c:out> </option>
+				</c:forEach>
 			</select>
 				
 			<label for="data" >Data</label> 
@@ -69,8 +71,8 @@
 			<select class="selector" id="escala1" id="escala1" disabled>
 				<option value="-">-</option>
 				
-				<c:forEach begin="1" end="5" var="item">
-					<option value="${item}"><c:out value="${item}"></c:out> </option>
+				<c:forEach items="${ cidades }" var="cidade">
+					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
 				</c:forEach>
 				
 			</select>
@@ -79,8 +81,8 @@
 			<select class="selector" id="escala2" name="escala2" disabled>
 				<option value="-">-</option>
 				
-				<c:forEach begin="1" end="5" var="item">
-					<option value="${item}"><c:out value="${item}"></c:out> </option>
+				<c:forEach items="${ cidades }" var="cidade">
+					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
 				</c:forEach>
 				
 			</select>
@@ -89,8 +91,8 @@
 			<select class="selector" id="escala3" name="escala3" disabled>
 				<option value="-">-</option>
 				
-				<c:forEach begin="1" end="5" var="item">
-					<option value="${item}"><c:out value="${item}"></c:out> </option>
+				<c:forEach items="${ cidades }" var="cidade">
+					<option value="${cidade.toString()}"><c:out value="${cidade.toString()}"></c:out> </option>
 				</c:forEach>
 				
 			</select>

@@ -13,9 +13,19 @@ public class Voo {
 	private Aviao aviao;
 	
 	
+	public Voo() {
+		
+	}
 	
 	
-	
+	public Voo(Calendar dataHoraPartida, Calendar dataHoraChegada, Rota rota, List<Cidade> escalas,
+			Aviao aviao) {
+		this.dataHoraPartida = dataHoraPartida;
+		this.dataHoraChegada = dataHoraChegada;
+		this.rota = rota;
+		this.escalas = escalas;
+		this.aviao = aviao;
+	}
 	public int getId() {
 		return id;
 	}
@@ -53,5 +63,9 @@ public class Voo {
 		this.aviao = aviao;
 	}
 	
+	@Override
+	public String toString() {
+		return this.aviao.getNome()+this.dataHoraChegada.get(Calendar.DATE)+rota.getDestino();
+	}
 	
 }
