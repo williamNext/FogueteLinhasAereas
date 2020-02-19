@@ -9,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.rocketAirlines.dao.VooDAO;
-import br.com.rocketAirlines.modelo.Voo;
+import br.com.rocketAirlines.dao.CidadeDAO;
+import br.com.rocketAirlines.modelo.Cidade;
 import br.com.rocketAirlines.util.JsonConverter;
 
-@WebServlet("/listaVoos")
-public class ListaVooService extends HttpServlet {
+@WebServlet("/listaCidades")
+public class ListaCidadeService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private final VooDAO vooDAO = VooDAO.getInstance();
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		List<Voo> lista = vooDAO.getLista();
-		String json = JsonConverter.toJson(lista);
+	private final CidadeDAO cidadeDAO = CidadeDAO.getInstance();
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Cidade> cidades = cidadeDAO.getLista();
+		String json = JsonConverter.toJson(cidades);
 		
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");

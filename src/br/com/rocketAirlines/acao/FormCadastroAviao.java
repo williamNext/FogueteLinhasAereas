@@ -11,24 +11,26 @@ import org.apache.http.client.fluent.Request;
 
 import com.google.gson.reflect.TypeToken;
 
-import br.com.rocketAirlines.modelo.Voo;
+import br.com.rocketAirlines.modelo.Cidade;
 import br.com.rocketAirlines.util.JsonConverter;
 
-public class ListaVoo implements Acao {
+public class FormCadastroAviao implements Acao {
 
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		String conteudo = Request
-			.Get("http://localhost:8080/taqui/listaVoos")
-			.execute()
-			.returnContent()
-			.asString();
+				.Get("http://localhost:8080/taqui/listaCidades")
+				.execute()
+				.returnContent()
+				.asString();
 		
-		Object lista = JsonConverter.fromJson(conteudo, new TypeToken<List<Voo>>(){}.getType());
-		request.setAttribute("voos", lista);		
-
-		return "forward:listaVoos.jsp";
+		Object lista = JsonConverter.fromJson(conteudo, new TypeToken<List<Cidade>>(){}.getType());
+		
+		request.setAttribute("cidades", lista);
+		
+		return "forward:cadastroAviao.jsp";
 	}
+
 }

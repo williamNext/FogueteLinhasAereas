@@ -18,36 +18,35 @@ public class MainController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String className = "br.com.rocketAirlines.acao." + getAcao(request.getRequestURI());
 		String nome = null;
 
-		System.out.println("Ainda não");
-		
 		try {
-			Class classe = Class.forName(className);// carrega a classe com o nome
+			Class classe = Class.forName(className);
 			Acao acao = (Acao) classe.newInstance();
 			nome = acao.executa(request, response);
+		} catch (ClassNotFoundException e){
+			System.out.println("Classe não encontrada: " + e.getMessage());
+			return;
 		} catch (Exception e) {
-			System.out.println("Deu Ruim" + e.getMessage());
+			System.out.println("Erro desconhecido: " + e.getMessage());
+			return;
 		}
-		
-		System.out.println("Passei");
-		
-		if (nome != null) {
-			String[] tipoEndereco = nome.split(":");
 
-			if (tipoEndereco[0].equals("forward")) {
-				RequestDispatcher rd = request.getRequestDispatcher("/" + tipoEndereco[1]);
-				rd.forward(request, response);
-			} else if (tipoEndereco[0].equals("redirect")) {
-				response.sendRedirect(tipoEndereco[1]);
-			}
+		String[] tipoEndereco = nome.split(":");
+
+		if (tipoEndereco[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher("/" + tipoEndereco[1]);
+			rd.forward(request, response);
+		} else if (tipoEndereco[0].equals("redirect")) {
+			response.sendRedirect(tipoEndereco[1]);
 		}
 	}
 
 	private String getAcao(String url) {
 		if (url == null || url.isEmpty()) {
-
+			return null;
 		}
 
 		String[] split = url.split("/");

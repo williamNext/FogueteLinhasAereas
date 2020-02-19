@@ -1,7 +1,4 @@
 <%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="br.com.rocketAirlines.modelo.Voo"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -11,9 +8,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Lista de Voos</title>
 <link href="listavoo.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
 	<c:import url="Header.jsp"></c:import>
@@ -21,9 +17,7 @@
 		<div class="tableTitle">
 			<h3>Lista de Voos</h3>
 		</div>
-
 		<div class="tableContainer" style="overflow-x: scroll !important;">
-
 			<table class="table">
 				<thead class="thead-dark">
 					<tr>
@@ -36,9 +30,7 @@
 						<th scope="col">Escalas</th>
 					</tr>
 				</thead>
-				
 				<c:forEach items="${voos}" var="voo">
-
 					<tr>
 						<td>${voo.id}</td>
 						<td>${voo.rota.origem.nome}</td>
@@ -48,12 +40,8 @@
 						<td>${voo.aviao.nome}, ${voo.aviao.modelo}</td>
 						<td>${voo.getEscalasAsString()}</td>
 					</tr>
-
 				</c:forEach>
-
 			</table>
-
-
 		</div>
 	</div>
 </body>

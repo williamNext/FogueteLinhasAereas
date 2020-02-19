@@ -1,7 +1,6 @@
 package br.com.rocketAirlines.webservice;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,25 +8,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.rocketAirlines.dao.VooDAO;
-import br.com.rocketAirlines.modelo.Voo;
+import br.com.rocketAirlines.dao.AviaoDAO;
+import br.com.rocketAirlines.modelo.Aviao;
 import br.com.rocketAirlines.util.JsonConverter;
 
-@WebServlet("/listaVoos")
-public class ListaVooService extends HttpServlet {
+@WebServlet("/cadastraAviao")
+public class CadastraAviaoService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private final VooDAO vooDAO = VooDAO.getInstance();
+	private final AviaoDAO aviaoDAO = AviaoDAO.getInstance();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<Voo> lista = vooDAO.getLista();
-		String json = JsonConverter.toJson(lista);
-		
+		String json = request.getReader().readLine();
+
+		Aviao aviao = JsonConverter.fromJson(json, Aviao.class);
+		aviaoDAO.add(aviao);
+
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(json);
+		// response.getWriter().print("Inserido");
+		response.setStatus(200);
 	}
 
 }

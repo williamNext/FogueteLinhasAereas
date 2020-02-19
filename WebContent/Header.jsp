@@ -24,8 +24,9 @@
 
 		<div class="menu">
 
-			<a href="cadastroAviao.jsp">CADASTRAR AVIÃO</a>
-			<a href="cadastroVoo.jsp">CADASTRAR VOO</a> <a href="ListaVoo">LISTAR VOOS</a>
+			<a href="FormCadastroAviao">CADASTRAR AVIÃO</a>
+			<a href="FormCadastroVoo">CADASTRAR VOO</a> 
+			<a href="ListaVoo">LISTAR VOOS</a>
 
 		</div>
 	</header>
